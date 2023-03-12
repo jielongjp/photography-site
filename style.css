@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&display=swap');
 
-body{
+:root {
+  --gap: 12px;
+  --num-cols: 4;
+  --row-height: 300px;
+}
+
+body {
   background: rgb(255, 255, 255);
   font-family: 'Indie Flower';
   font-size: 16px;
@@ -8,14 +14,14 @@ body{
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-      }
-      @keyframes fadeInAnimation {
-          0% {
-              opacity: 0;
-          }
-          100% {
-              opacity: 1;
-          }
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #navbar { 
@@ -48,7 +54,7 @@ body{
   border-radius: 0.5rem;
   } 
 
- #top {
+#top {
   background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/free-mountain-vector-02.jpg");
   min-height: 500px;
   background-position: center;
@@ -56,14 +62,14 @@ body{
   background-size: cover;
   position: relative;
   box-shadow: 5px 5px 5px rgb(167, 167, 167);
-  }
+}
 
-header{
-    font-family: 'Caveat', cursive;
-    padding: 20px;
-    text-align: center;
-    font-size: 55px;
-    color: #000000;
+header {
+  font-family: 'Caveat', cursive;
+  padding: 20px;
+  text-align: center;
+  font-size: 55px;
+  color: #000000;
 }
 
 img {
@@ -76,10 +82,6 @@ img {
 } */
 
 .image-grid {
-  --gap: 8px;
-  --num-cols: 4;
-  --row-height: 300px;
-
   box-sizing: border-box;
   padding: var(--gap);
 
@@ -114,11 +116,7 @@ img {
 
   /* to do: combine below with above in a container*/
 
-  .image-grid-two{
-  --gap: 12px;
-  --num-cols: 4;
-  --row-height: 300px;
-
+.image-grid-two {
   box-sizing: border-box;
   padding: var(--gap);
 
@@ -126,22 +124,16 @@ img {
   grid-template-columns: repeat(var(--num-cols), 1fr);
   grid-auto-rows: var(--row-height);
   gap: var(--gap);
-  }
+}
 
-  .image-grid-two > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-/* something wrong with media query */
-    @media screen and (max-width: 1024px) {
-    .image-grid .image-grid-two {
-      --num-cols: 2;
-      --row-height: 200px;
-    }
-  }
+.image-grid-two > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
 
-  .about {
+.about {
   display: grid;
   --gap: 8px;
   --num-cols: 9;
@@ -152,29 +144,28 @@ img {
   margin: 0 auto;
   padding: var(--gap);
 
-  display: grid;
   grid-template-columns: repeat(var(--num-cols), 1fr);
   grid-auto-rows: var(--row-height);
   gap: var(--gap);
-  }
+}
 
-  .about-me-image {
-    grid-column: span 6;
-    grid-row: span 2;
-  }
+.about-me-image {
+  grid-column: span 6;
+  grid-row: span 2;
+}
 
-  .about-me-image img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+.about-me-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
-  #about-me-content {
-   grid-column: span 3;
-   grid-row: span 2;
-  }
+#about-me-content {
+  grid-column: span 3;
+  grid-row: span 2;
+}
 
-  footer { 
+footer { 
   list-style-type: none; 
   text-align: center; 
   font-family: 'Indie Flower';
@@ -195,3 +186,21 @@ footer ul li a {
   text-decoration: none;
   font-size: 17px;
 } 
+
+@media screen and (max-width: 600px) {
+  .image-grid, .image-grid-two, .about {
+    --num-cols: 2;
+    --row-height: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-grid, .image-grid-two {
+    --num-cols: 1;
+    --row-height: 200px;
+  }
+
+  #navbar ul li a {
+    padding: 6px 12px;
+  }
+}
