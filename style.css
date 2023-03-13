@@ -14,6 +14,8 @@ body {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  overflow-x: hidden;
+  position: relative;
 }
 @keyframes fadeInAnimation {
     0% {
@@ -198,6 +200,10 @@ footer ul li a {
   .image-grid, .image-grid-two {
     --num-cols: 1;
     --row-height: 200px;
+  }
+  
+  header {
+    font-size: 45px;
   }
 
   #navbar ul li a {
